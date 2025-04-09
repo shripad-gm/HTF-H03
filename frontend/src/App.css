@@ -1,0 +1,73 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: 'Mulish', sans-serif;
+}
+
+.app-container {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  position: relative;
+  background-color: rgb(49, 49, 49);
+}
+
+.main-layout {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+/* Sidebar with slide animation */
+.sidebar-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 220px;
+  background-color: #212529;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+  z-index: 100;
+}
+
+/* Show sidebar when open */
+.sidebar-wrapper.open {
+  transform: translateX(0);
+}
+
+.content-area {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  flex-grow: 1;
+  transition: all 0.3s ease;
+  margin-left: 0;
+  width: 100%;
+}
+
+/* Shift content to the right */
+.content-area.with-sidebar {
+  margin-left: 220px;
+  width: calc(100% - 220px);
+}
+
+.content-area.full-width {
+  margin-left: 0;
+  width: 100%;
+}
+
+.open-sidebar-btn {
+  position: fixed;
+  top: 25px;
+  left: 10px;
+  background: #fab005;
+  color: #000000;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 14px;
+  cursor: pointer;
+  z-index: 200;
+}
